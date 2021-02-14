@@ -1,3 +1,5 @@
+<img alt="Cucumber BDD Testing" src="cucumber.png" height="128px"/>
+
 ### My Cucumber Project
 _by Erin Chancey (aka the Ybor Super Rooster)_
 
