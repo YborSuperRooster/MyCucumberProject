@@ -107,6 +107,21 @@ public class CheckoutPage extends Page {
         return total;
     }
 
+    public Double getTax() {
+        try {
+            String value;
+            double tax;
+            wait.until(d -> d.findElement(By.xpath("//div[@class='summary_tax_label']")));
+            value = browser.getDriver().findElement(By.xpath("//div[@class='summary_tax_label']")).getText().substring(6,10);
+            tax = Double.parseDouble(value);
+            return tax;
+
+        } catch (NoSuchElementException e) {
+            System.out.println("Element not found");
+        }
+        return null;
+    }
+
 
     public void clickCartIcon() {
         try {

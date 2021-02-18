@@ -2,6 +2,7 @@ package com.yborsuperrooster.cucumber.glue;
 
 import com.yborsuperrooster.selenium.page.*;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -46,14 +47,17 @@ public class CheckoutStepTwoStepDefinitions {
     @Then("^the Item total should display the correct sum$")
     public void the_item_total_sum_should_display()  {
         Assert.assertEquals(checkOut.getItemTotal(),checkOut.calculateSumOfItems());
+
+    }
+
+    @And("{double}% tax should be calculated based on the Item Total sum")
+    public void taxShouldBeCalculatedBasedOnTheItemTotalSum(double tax) {
+        double taxValue = checkOut.getTax();
+        double taxedTotal = checkOut.getItemTotal() * tax;
+        double finalCalTax = Math.round(taxedTotal * 100) / 100d;
+        Assert.assertEquals(taxValue, finalCalTax, Double.MIN_VALUE);
         checkOut.clickCartIcon();
         cartPage.clearCart();
 
     }
-
-    //TODO: Remove commented out code
-    /*@And("a 0.08% tax should be calculated based on the Item total sum")
-    public void theTaxTotalShouldDisplayTheCorrectAmount() {
-
-    }*/
 }

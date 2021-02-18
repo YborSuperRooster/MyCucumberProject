@@ -7,9 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
-
 import static org.junit.Assert.assertTrue;
 
 public class RemoveButtonStepDefinitions {

@@ -4,7 +4,6 @@ import com.yborsuperrooster.selenium.Browser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
